@@ -14,4 +14,3 @@ FIXTURES = Path(__file__).parent / "fixtures"
 def api():
     """API test client."""
     return TestClient(app)
-
