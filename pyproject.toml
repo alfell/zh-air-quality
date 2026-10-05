@@ -1,17 +1,33 @@
 [project]
 name = "zh-air-quality"
 version = "0.1.0"
-description = "Add your description here"
+description = "App that shows air quality for the measurement stations in Zurich "
 readme = "README.md"
 authors = [
-    { name = "alfell", email = "ale_feller@hotmail.com" }
+    { name = "Alessandro Feller", email = "aless.feller@gmail.com" }
 ]
 requires-python = ">=3.12"
-dependencies = []
-
-[project.scripts]
-zh-air-quality = "zh_air_quality:main"
+dependencies = [
+    "fastapi>=0.142.2",
+    "httpx>=0.28.1",
+    "pandas>=3.0.6",
+    "uvicorn>=0.54.0",
+]
 
 [build-system]
 requires = ["uv_build>=0.12.13,<0.13.0"]
 build-backend = "uv_build"
+
+[dependency-groups]
+dev = [
+    "httpx2>=2.13.1",
+    "pre-commit>=4.6.2",
+    "pytest>=9.1.1",
+    "pytest-cov>=7.1.0",
+    "ruff>=0.16.9",
+    "tox>=4.64.2",
+    "tox-uv>=1.36.0",
+]
+
+[tool.ruff.lint]
+extend-select = ["I", "N", "FAST"]
