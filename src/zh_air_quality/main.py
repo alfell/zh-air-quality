@@ -3,7 +3,7 @@
 from fastapi import FastAPI
 
 from zh_air_quality import config
-from zh_air_quality.routers import health
+from zh_air_quality.routers import health, stations
 
 app = FastAPI(
     title="Air Quality API for the City of Zurich",
@@ -15,3 +15,4 @@ app = FastAPI(
     },
 )
 app.include_router(health.router)
+app.include_router(stations.router)
